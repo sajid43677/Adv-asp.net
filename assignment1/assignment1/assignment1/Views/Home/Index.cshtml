@@ -1,7 +1,4 @@
-﻿@{
-    ViewBag.Title = "Home Page";
-}
-
+﻿
 <main>
     <ul class="nav bg-black bg-opacity-25">
         <li class="nav-item">
@@ -21,9 +18,9 @@
         </li>
     </ul>
     <section class="row" aria-labelledby="aspnetTitle">
-        <h1 id="title">Shajid Kamal Joy</h1>
-        <p class="lead">20-43677-2</p>
-        <p class="active">20-43677-2@student.aiub.edu</p>
+        <h1 id="title">@ViewBag.student.Name</h1>
+        <p class="lead">@ViewBag.student.ID</p>
+        <p class="active">@ViewBag.student.Email</p>
     </section>
 
     

@@ -35,24 +35,20 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>SSC</td>
-                    <td>2017</td>
-                    <td>BN School and College-Chattogram</td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>HSC</td>
-                    <td>2019</td>
-                    <td>BN School and College-Chattogram</td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>BSc</td>
-                    <td>2024</td>
-                    <td>American International University-Bangladesh</td>
-                </tr>
+                @{  
+                    var curr = 1;
+                    foreach (var i in ViewBag.student.Educations)
+                        {
+                         <tr>
+                            <th scope="row">@curr</th>
+                            <td>@i.Degree</td>
+                            <td>@i.PassingYear</td>
+                            <td>@i.Institution</td>
+                         </tr>
+                            curr++;
+                        }
+                }
+
             </tbody>
         </table>
     </div>
