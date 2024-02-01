@@ -46,16 +46,50 @@ namespace assignment1.Controllers
 
         public ActionResult Personal()
         {
+            student.Name = "Shajid Kamal Joy";
+            student.PhoneNo = "01700000000";
+            student.FathersName = "Md. Kamal";
+            student.MothersName = "Mrs. Kamal";
+            student.PresentAddress = "Chattogram";
+            student.DateOfBirth = "01/01/2001";
+            ViewBag.student = student;
+
             return View();
         }
 
         public ActionResult Projects()
         {
+            Project[] projects = new Project[4];
+            projects[0] = new Project();
+            projects[0].Name = "Transport Information";
+            projects[0].Course = "Object Oriented Programming 1";
+            projects[1] = new Project();
+            projects[1].Name = "Hostel Management System";
+            projects[1].Course = "Object Oriented Programming 2";
+            projects[2] = new Project();
+            projects[2].Name = "Software Development Project Management";
+            projects[2].Course = "Webtech";
+            projects[3] = new Project();
+            projects[3].Name = "Vokter Odhikar";
+            projects[3].Course = "Advance Webtech";
+            student.Projects = projects;
+
+            ViewBag.student = student;
+
             return View();
         }
 
         public ActionResult References()
         {
+            References[] references = new References[2];
+            references[0] = new References();
+            references[0].Name = "Dr. Md. Abdur Rahman";
+            references[0].Email = "abdur@aiub.edu";
+            references[1] = new References();
+            references[1].Name = "Dr. Md. Saiful Islam";
+            references[1].Email = "saiful@aiub.edu";
+            student.References = references;
+            ViewBag.student = student;
             return View();
         }
 

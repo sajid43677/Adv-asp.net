@@ -1,7 +1,4 @@
 ﻿
-@{
-    ViewBag.Title = "Projects";
-}
 
 <main>
     <ul class="nav bg-black bg-opacity-25">
@@ -24,10 +21,10 @@
     <section class="row" aria-labelledby="aspnetTitle">
         <h1 id="title">Projects</h1>
         <ul  style="list-style-type:disc;">
-            <li >OOP1 - Transportation Info</li>
-            <li >OOP2 - Smart Hostel Management</li>
-            <li >Webtech - Software Project Development Management</li>
-            <li >Advance Webtech - Voktar Odhikar</li>
+            @foreach (var i in ViewBag.student.Projects)
+            {
+                <li>@i.Name - @i.Course </li>
+            }
         </ul>
     </section>
 

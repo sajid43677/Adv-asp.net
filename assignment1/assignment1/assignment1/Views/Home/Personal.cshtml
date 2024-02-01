@@ -1,8 +1,4 @@
 ﻿
-@{
-    ViewBag.Title = "Personal";
-}
-
 <main>
     <ul class="nav bg-black bg-opacity-25">
         <li class="nav-item">
@@ -23,11 +19,12 @@
     </ul>
     <section class="row" aria-labelledby="aspnetTitle">
         <h1 id="title">Personal</h1>
-        <p class="lead">Name: Shajid Kamal Joy</p>
-        <p class="lead">Father's Name: MD.</p>
-        <p class="lead">Mothers's Name: MS.</p>
-        <p class="lead">Date of Birth: 24 february 2002</p>
-        <p class="lead">Mobile: 01888888888</p>
+        <p class="lead">Name: @ViewBag.student.Name</p>
+        <p class="lead">Father's Name: @ViewBag.student.FathersName</p>
+        <p class="lead">Mother's Name: @ViewBag.student.MothersName</p>
+        <p class="lead">D.O.B: @ViewBag.student.DateOfBirth</p>
+        <p class="lead">Mobile No: @ViewBag.student.PhoneNo</p>
+        <p class="lead">Address: @ViewBag.student.PresentAddress</p>
     </section>
 
 

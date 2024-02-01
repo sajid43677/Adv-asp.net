@@ -1,7 +1,4 @@
 ﻿
-@{
-    ViewBag.Title = "References";
-}
 
 <main>
     <ul class="nav bg-black bg-opacity-25">
@@ -35,23 +32,15 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    
-                    <td>Dr. John</td>
-                    <td>john@email.com</td>
-                   
-                </tr>
-                <tr>
-                   
-                    <td>Dr. Karim Haque</td>
-                    <td>karim@email.com</td>
-                
-                </tr>
-                <tr>
-                   
-                    <td>Ms. Manisha</td>
-                    <td>manish@mail.com</td>
-                </tr>
+                @foreach (var i in ViewBag.student.References)
+                {
+                    <tr>
+                       
+                        <td>@i.Name</td>
+                        <td>@i.Email</td>
+                       
+                    </tr>
+                }
             </tbody>
         </table>
     </div>
