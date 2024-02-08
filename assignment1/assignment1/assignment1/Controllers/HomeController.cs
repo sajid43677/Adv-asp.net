@@ -10,11 +10,13 @@ namespace assignment1.Controllers
     public class HomeController : Controller
     {
         Student student = new Student();
+        public int count = 0;
         public ActionResult Index()
         {
 
-            ViewBag.student = TempData["student"];
-            return View();
+            student = Session["student"] as Student ?? new Student();
+            return View(student);
+         
         }
         [HttpGet]
         public ActionResult SignUp()
@@ -30,7 +32,7 @@ namespace assignment1.Controllers
                 student.Name = u.Name;
                 student.Email = u.Email;
                 student.ID = u.Id;
-                TempData["student"] = student;
+                Session["student"] = student;
                 return RedirectToAction("Index");
             }
 
@@ -57,7 +59,7 @@ namespace assignment1.Controllers
             educations[2].PassingYear = "2024";
             student.Educations = educations;
             ViewBag.student = student;
-            return View();
+            return View(student);
         }
 
         public ActionResult Personal()
@@ -67,15 +69,15 @@ namespace assignment1.Controllers
             student.FathersName = "Md. Kamal";
             student.MothersName = "Mrs. Kamal";
             student.PresentAddress = "Chattogram";
-            student.DateOfBirth = "01/01/2001";
-            ViewBag.student = student;
+            student.DateOfBirth = "24/11/2001";
+           
 
-            return View();
+            return View(student);
         }
 
         public ActionResult Projects()
         {
-            Project[] projects = new Project[5];
+            Project[] projects = new Project[4];
             projects[0] = new Project();
             projects[0].Name = "Transport Information";
             projects[0].Course = "Object Oriented Programming 1";
@@ -90,9 +92,9 @@ namespace assignment1.Controllers
             projects[3].Course = "Advance Webtech";
             student.Projects = projects;
 
-            ViewBag.student = student;
+           
 
-            return View();
+            return View(student);
         }
 
         public ActionResult References()
@@ -105,8 +107,8 @@ namespace assignment1.Controllers
             references[1].Name = "Dr. Md. Saiful Islam";
             references[1].Email = "saiful@aiub.edu";
             student.References = references;
-            ViewBag.student = student;
-            return View();
+            
+            return View(student);
         }
 
         public ActionResult About()

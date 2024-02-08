@@ -21,7 +21,7 @@
     <section class="row" aria-labelledby="aspnetTitle">
         <h1 id="title">Projects</h1>
         <ul  style="list-style-type:disc;">
-            @foreach (var i in ViewBag.student.Projects)
+            @foreach (var i in Model.Projects)
             {
                 <li>@i.Name - @i.Course </li>
             }
