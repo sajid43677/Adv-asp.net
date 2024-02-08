@@ -12,15 +12,31 @@ namespace assignment1.Controllers
         Student student = new Student();
         public ActionResult Index()
         {
-            
-            student.Name = "Shajid Kamal Joy";
-            student.Email = "20-43677-2@aiub.edu";
-            student.ID = "20-43677-2";
 
-            ViewBag.student = student;
+            ViewBag.student = TempData["student"];
             return View();
         }
+        [HttpGet]
+        public ActionResult SignUp()
+        {
 
+            return View(new User());
+        }
+        [HttpPost]
+        public ActionResult SignUp(User u)
+        {
+            if(ModelState.IsValid)
+            {
+                student.Name = u.Name;
+                student.Email = u.Email;
+                student.ID = u.Id;
+                TempData["student"] = student;
+                return RedirectToAction("Index");
+            }
+
+            
+            return View(u);
+        }
         public ActionResult Education()
         {
             Education[] educations = new Education[3];
@@ -59,7 +75,7 @@ namespace assignment1.Controllers
 
         public ActionResult Projects()
         {
-            Project[] projects = new Project[4];
+            Project[] projects = new Project[5];
             projects[0] = new Project();
             projects[0].Name = "Transport Information";
             projects[0].Course = "Object Oriented Programming 1";
