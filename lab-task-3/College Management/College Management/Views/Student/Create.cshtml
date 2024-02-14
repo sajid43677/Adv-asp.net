@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create Student</h2>
+<form method="post" action="">
+    <input type="text" value="@Model.Name" placeholder="Name" class="form-control" name="Name" />
+    <input type="text" value="@Model.Address" placeholder="Address" class="form-control" name="Address" />
+    <input type="text" value="@Model.Cgpa" placeholder="Cgpa" class="form-control" name="Cgpa" />
+    <br />
+    <input type="submit" value="Create" class="btn btn-danger" />
+</form>
+
+

@@ -1,0 +1,83 @@
+E:\study\.net\assignment1\College Management\College Management\bin\College Management.dll.config
+E:\study\.net\assignment1\College Management\College Management\bin\College Management.dll
+E:\study\.net\assignment1\College Management\College Management\bin\College Management.pdb
+E:\study\.net\assignment1\College Management\College Management\bin\roslyn\csc.exe
+E:\study\.net\assignment1\College Management\College Management\bin\roslyn\csc.exe.config
+E:\study\.net\assignment1\College Management\College Management\bin\roslyn\csc.rsp
+E:\study\.net\assignment1\College Management\College Management\bin\roslyn\csi.exe
+E:\study\.net\assignment1\College Management\College Management\bin\roslyn\csi.exe.config
+E:\study\.net\assignment1\College Management\College Management\bin\roslyn\csi.rsp
+E:\study\.net\assignment1\College Management\College Management\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\study\.net\assignment1\College Management\College Management\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\study\.net\assignment1\College Management\College Management\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+E:\study\.net\assignment1\College Management\College Management\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\study\.net\assignment1\College Management\College Management\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+E:\study\.net\assignment1\College Management\College Management\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\study\.net\assignment1\College Management\College Management\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\study\.net\assignment1\College Management\College Management\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+E:\study\.net\assignment1\College Management\College Management\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+E:\study\.net\assignment1\College Management\College Management\bin\roslyn\Microsoft.Managed.Core.targets
+E:\study\.net\assignment1\College Management\College Management\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\study\.net\assignment1\College Management\College Management\bin\roslyn\Microsoft.Win32.Primitives.dll
+E:\study\.net\assignment1\College Management\College Management\bin\roslyn\System.AppContext.dll
+E:\study\.net\assignment1\College Management\College Management\bin\roslyn\System.Collections.Immutable.dll
+E:\study\.net\assignment1\College Management\College Management\bin\roslyn\System.Console.dll
+E:\study\.net\assignment1\College Management\College Management\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+E:\study\.net\assignment1\College Management\College Management\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+E:\study\.net\assignment1\College Management\College Management\bin\roslyn\System.Diagnostics.StackTrace.dll
+E:\study\.net\assignment1\College Management\College Management\bin\roslyn\System.Globalization.Calendars.dll
+E:\study\.net\assignment1\College Management\College Management\bin\roslyn\System.IO.Compression.dll
+E:\study\.net\assignment1\College Management\College Management\bin\roslyn\System.IO.Compression.ZipFile.dll
+E:\study\.net\assignment1\College Management\College Management\bin\roslyn\System.IO.FileSystem.dll
+E:\study\.net\assignment1\College Management\College Management\bin\roslyn\System.IO.FileSystem.Primitives.dll
+E:\study\.net\assignment1\College Management\College Management\bin\roslyn\System.Net.Http.dll
+E:\study\.net\assignment1\College Management\College Management\bin\roslyn\System.Net.Sockets.dll
+E:\study\.net\assignment1\College Management\College Management\bin\roslyn\System.Reflection.Metadata.dll
+E:\study\.net\assignment1\College Management\College Management\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+E:\study\.net\assignment1\College Management\College Management\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+E:\study\.net\assignment1\College Management\College Management\bin\roslyn\System.Security.Cryptography.Encoding.dll
+E:\study\.net\assignment1\College Management\College Management\bin\roslyn\System.Security.Cryptography.Primitives.dll
+E:\study\.net\assignment1\College Management\College Management\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+E:\study\.net\assignment1\College Management\College Management\bin\roslyn\System.Text.Encoding.CodePages.dll
+E:\study\.net\assignment1\College Management\College Management\bin\roslyn\System.Threading.Tasks.Extensions.dll
+E:\study\.net\assignment1\College Management\College Management\bin\roslyn\System.ValueTuple.dll
+E:\study\.net\assignment1\College Management\College Management\bin\roslyn\System.Xml.ReaderWriter.dll
+E:\study\.net\assignment1\College Management\College Management\bin\roslyn\System.Xml.XmlDocument.dll
+E:\study\.net\assignment1\College Management\College Management\bin\roslyn\System.Xml.XPath.dll
+E:\study\.net\assignment1\College Management\College Management\bin\roslyn\System.Xml.XPath.XDocument.dll
+E:\study\.net\assignment1\College Management\College Management\bin\roslyn\vbc.exe
+E:\study\.net\assignment1\College Management\College Management\bin\roslyn\vbc.exe.config
+E:\study\.net\assignment1\College Management\College Management\bin\roslyn\vbc.rsp
+E:\study\.net\assignment1\College Management\College Management\bin\roslyn\VBCSCompiler.exe
+E:\study\.net\assignment1\College Management\College Management\bin\roslyn\VBCSCompiler.exe.config
+E:\study\.net\assignment1\College Management\College Management\bin\Antlr3.Runtime.dll
+E:\study\.net\assignment1\College Management\College Management\bin\EntityFramework.dll
+E:\study\.net\assignment1\College Management\College Management\bin\EntityFramework.SqlServer.dll
+E:\study\.net\assignment1\College Management\College Management\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\study\.net\assignment1\College Management\College Management\bin\Microsoft.Web.Infrastructure.dll
+E:\study\.net\assignment1\College Management\College Management\bin\Newtonsoft.Json.dll
+E:\study\.net\assignment1\College Management\College Management\bin\System.Web.Helpers.dll
+E:\study\.net\assignment1\College Management\College Management\bin\System.Web.Mvc.dll
+E:\study\.net\assignment1\College Management\College Management\bin\System.Web.Optimization.dll
+E:\study\.net\assignment1\College Management\College Management\bin\System.Web.Razor.dll
+E:\study\.net\assignment1\College Management\College Management\bin\System.Web.WebPages.Deployment.dll
+E:\study\.net\assignment1\College Management\College Management\bin\System.Web.WebPages.dll
+E:\study\.net\assignment1\College Management\College Management\bin\System.Web.WebPages.Razor.dll
+E:\study\.net\assignment1\College Management\College Management\bin\WebGrease.dll
+E:\study\.net\assignment1\College Management\College Management\bin\EntityFramework.xml
+E:\study\.net\assignment1\College Management\College Management\bin\EntityFramework.SqlServer.xml
+E:\study\.net\assignment1\College Management\College Management\bin\System.Web.Helpers.xml
+E:\study\.net\assignment1\College Management\College Management\bin\System.Web.Mvc.xml
+E:\study\.net\assignment1\College Management\College Management\bin\System.Web.Optimization.xml
+E:\study\.net\assignment1\College Management\College Management\bin\System.Web.Razor.xml
+E:\study\.net\assignment1\College Management\College Management\bin\System.Web.WebPages.xml
+E:\study\.net\assignment1\College Management\College Management\bin\System.Web.WebPages.Deployment.xml
+E:\study\.net\assignment1\College Management\College Management\bin\System.Web.WebPages.Razor.xml
+E:\study\.net\assignment1\College Management\College Management\bin\Newtonsoft.Json.xml
+E:\study\.net\assignment1\College Management\College Management\bin\Antlr3.Runtime.pdb
+E:\study\.net\assignment1\College Management\College Management\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\study\.net\assignment1\College Management\College Management\obj\Debug\College Management.csproj.AssemblyReference.cache
+E:\study\.net\assignment1\College Management\College Management\obj\Debug\College Management.csproj.CoreCompileInputs.cache
+E:\study\.net\assignment1\College Management\College Management\obj\Debug\College Management.csproj.CopyComplete
+E:\study\.net\assignment1\College Management\College Management\obj\Debug\College Management.dll
+E:\study\.net\assignment1\College Management\College Management\obj\Debug\College Management.pdb

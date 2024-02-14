@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>List</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Cgpa</th>
+    </tr>
+    @foreach (var i in Model)
+    {
+        <tr>
+            <td>@i.id</td>
+            <td>@i.Name</td>
+            <td>@i.Address</td>
+            <td>@i.Cgpa</td>
+        </tr>
+    }
+</table>
+
