@@ -128,6 +128,8 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Auth\access.cs" />
+    <Compile Include="Auth\AdminAccess.cs" />
     <Compile Include="Controllers\adminController.cs" />
     <Compile Include="Controllers\collectorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />

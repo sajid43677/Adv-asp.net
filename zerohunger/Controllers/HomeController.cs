@@ -129,6 +129,12 @@ namespace zerohunger.Controllers
             return View(model);
         }
 
+        public ActionResult Logout()
+        {
+            Session["user"] = null;
+            return RedirectToAction("Index");
+        }
+
         public static user Convert(userDTO user)
         {
             return new user

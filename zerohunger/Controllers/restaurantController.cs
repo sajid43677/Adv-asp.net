@@ -4,11 +4,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using zerohunger.Auth;
 using zerohunger.DTOs;
 using zerohunger.EF;
 
 namespace zerohunger.Controllers
 {
+    [Access]
     public class restaurantController : Controller
     {
         // GET: restaurant
@@ -38,7 +40,7 @@ namespace zerohunger.Controllers
                 var user = Session["user"] as user;
                 var request = convert(model, user);
                 request.restrurant = db.restrurants.FirstOrDefault(u => u.id == user.id);
-                request.collector = db.collectors.FirstOrDefault(u => u.id == 1);
+                request.collector = db.collectors.FirstOrDefault(u => u.id == 0);
                 db.requests.Add(request);
                 db.SaveChanges();
                 return RedirectToAction("Index");

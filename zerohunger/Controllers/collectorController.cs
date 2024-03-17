@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Web;
 using System.Web.Mvc;
+using zerohunger.Auth;
 using zerohunger.EF;
 
 namespace zerohunger.Controllers
 {
+    [Access]
     public class collectorController : Controller
     {
         // GET: collector
@@ -15,7 +18,7 @@ namespace zerohunger.Controllers
         public ActionResult Index()
         {
             var user = Session["user"] as user;
-            var data = fetch(user.id);
+            var data = fetch(user.id).OrderBy(x => x.validity);
             return View(data);
 
         }

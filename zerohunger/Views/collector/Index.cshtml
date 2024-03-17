@@ -40,9 +40,13 @@
 
 
             }
-            else
+            else if(item.status.Equals("claimed"))
             {
                 <div class="text-md-center text-success">@item.status</div>
+            }
+            else
+            {
+                <div class="text-md-center text-danger">@item.status</div>
             }
         </div>
     </div>

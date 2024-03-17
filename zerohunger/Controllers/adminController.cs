@@ -6,11 +6,14 @@ using System.Web.Mvc;
 using zerohunger.EF;
 using zerohunger.DTOs;
 using zerohunger.Models;
+using zerohunger.Auth;
 
 namespace zerohunger.Controllers
 {
+    [AdminAccess]
     public class adminController : Controller
     {
+        
         // GET: admin
         ZeroHungerEntities db = new ZeroHungerEntities();
         [HttpGet]
@@ -38,9 +41,10 @@ namespace zerohunger.Controllers
         public static adminData fetch()
         {
             ZeroHungerEntities db = new ZeroHungerEntities();
-            var data = db.collectors.ToList();
+            var data = db.collectors.Where(x => x.id != 0).ToList();
             var dataDTO = Convert(data);
-            var data1 = db.requests.ToList();
+            var data1 = db.requests.OrderBy(x => x.validity).ToList();
+
             adminData adminData = new adminData();
             adminData.collectors = dataDTO;
             adminData.requests = data1;
