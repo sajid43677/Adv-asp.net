@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ZeroHungerModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="collector">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="current_assigned" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="user" Relationship="Self.FK_collector_user" FromRole="collector" ToRole="user" />
+    <NavigationProperty Name="requests" Relationship="Self.FK_request_collector" FromRole="collector" ToRole="request" />
+  </EntityType>
+  <EntityType Name="request">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="weight" Type="Double" Nullable="false" />
+    <Property Name="validity" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="start" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="rid" Type="Int32" Nullable="false" />
+    <Property Name="cid" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="collector" Relationship="Self.FK_request_collector" FromRole="request" ToRole="collector" />
+    <NavigationProperty Name="restrurant" Relationship="Self.FK_request_restrurant" FromRole="request" ToRole="restrurant" />
+  </EntityType>
+  <EntityType Name="restrurant">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="location" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="requests" Relationship="Self.FK_request_restrurant" FromRole="restrurant" ToRole="request" />
+    <NavigationProperty Name="user" Relationship="Self.FK_restrurant_user" FromRole="restrurant" ToRole="user" />
+  </EntityType>
+  <EntityType Name="user">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="pass" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="role" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="collector" Relationship="Self.FK_collector_user" FromRole="user" ToRole="collector" />
+    <NavigationProperty Name="restrurant" Relationship="Self.FK_restrurant_user" FromRole="user" ToRole="restrurant" />
+  </EntityType>
+  <Association Name="FK_collector_user">
+    <End Role="user" Type="Self.user" Multiplicity="1" />
+    <End Role="collector" Type="Self.collector" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="user">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="collector">
+        <PropertyRef Name="id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_request_collector">
+    <End Role="collector" Type="Self.collector" Multiplicity="1" />
+    <End Role="request" Type="Self.request" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="collector">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="request">
+        <PropertyRef Name="cid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_request_restrurant">
+    <End Role="restrurant" Type="Self.restrurant" Multiplicity="1" />
+    <End Role="request" Type="Self.request" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="restrurant">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="request">
+        <PropertyRef Name="rid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_restrurant_user">
+    <End Role="user" Type="Self.user" Multiplicity="1" />
+    <End Role="restrurant" Type="Self.restrurant" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="user">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="restrurant">
+        <PropertyRef Name="id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ZeroHungerEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="collectors" EntityType="Self.collector" />
+    <EntitySet Name="requests" EntityType="Self.request" />
+    <EntitySet Name="restrurants" EntityType="Self.restrurant" />
+    <EntitySet Name="users" EntityType="Self.user" />
+    <AssociationSet Name="FK_collector_user" Association="Self.FK_collector_user">
+      <End Role="user" EntitySet="users" />
+      <End Role="collector" EntitySet="collectors" />
+    </AssociationSet>
+    <AssociationSet Name="FK_request_collector" Association="Self.FK_request_collector">
+      <End Role="collector" EntitySet="collectors" />
+      <End Role="request" EntitySet="requests" />
+    </AssociationSet>
+    <AssociationSet Name="FK_request_restrurant" Association="Self.FK_request_restrurant">
+      <End Role="restrurant" EntitySet="restrurants" />
+      <End Role="request" EntitySet="requests" />
+    </AssociationSet>
+    <AssociationSet Name="FK_restrurant_user" Association="Self.FK_restrurant_user">
+      <End Role="user" EntitySet="users" />
+      <End Role="restrurant" EntitySet="restrurants" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ZeroHungerModelStoreContainer" CdmEntityContainer="ZeroHungerEntities">
+    <EntitySetMapping Name="collectors">
+      <EntityTypeMapping TypeName="ZeroHungerModel.collector">
+        <MappingFragment StoreEntitySet="collector">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="current_assigned" ColumnName="current_assigned" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="requests">
+      <EntityTypeMapping TypeName="ZeroHungerModel.request">
+        <MappingFragment StoreEntitySet="request">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="weight" ColumnName="weight" />
+          <ScalarProperty Name="validity" ColumnName="validity" />
+          <ScalarProperty Name="start" ColumnName="start" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="rid" ColumnName="rid" />
+          <ScalarProperty Name="cid" ColumnName="cid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="restrurants">
+      <EntityTypeMapping TypeName="ZeroHungerModel.restrurant">
+        <MappingFragment StoreEntitySet="restrurant">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="location" ColumnName="location" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="users">
+      <EntityTypeMapping TypeName="ZeroHungerModel.user">
+        <MappingFragment StoreEntitySet="user">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="pass" ColumnName="pass" />
+          <ScalarProperty Name="role" ColumnName="role" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,70 @@
+﻿@model IEnumerable<zerohunger.EF.request>
+
+<h2>Wellcome restaurant</h2>
+<div>
+    <a href="../restaurant/create" class="btn btn-outline-info">Create pickup request</a>
+</div>
+<div><h3>Your requests:</h3></div>
+<div class="row m-0 bg-dark p-3 rounded text-white">
+    <div class="col">Request Placed</div>
+    <div class="col">Validity Date</div>
+    <div class="col">Food weight</div>
+
+    <div class="col">Status</div>
+
+</div>
+<div>
+    @foreach (var item in Model)
+    {
+        if (item.status.Equals("pending"))
+        {
+            <div class="row m-0 my-1 bg-dark p-3 rounded text-white">
+                <div class="col border-end">@item.start.ToString("dd-MM-yyyy")</div>
+                <div class="col border-end">@item.validity.ToString("dd-MM-yyyy")</div>
+                <div class="col border-end">@item.weight kg</div>
+
+                <div class="col text-warning">Pending</div>
+
+            </div>
+        }
+
+        else if (item.status.Equals("Assigned"))
+        {
+            <div class="row m-0 my-1 bg-dark p-3 rounded text-white">
+                <div class="col border-end">@item.start.ToString("dd-MM-yyyy")</div>
+                <div class="col border-end">@item.validity.ToString("dd-MM-yyyy")</div>
+                <div class="col border-end">@item.weight kg</div>
+
+                <div class="col text-secondary">Assigned(@item.collector.name)</div>
+
+            </div>
+        }
+        else if (item.status.Equals("collected"))
+        {
+            <div class="row m-0 my-1 bg-dark p-3 rounded text-white">
+                <div class="col border-end">@item.start.ToString("dd-MM-yyyy")</div>
+                <div class="col border-end">@item.validity.ToString("dd-MM-yyyy")</div>
+                <div class="col border-end">@item.weight kg</div>
+
+                <div class="col text-success">Collected</div>
+
+            </div>
+        }
+        else if (item.status.Equals("Expired"))
+        {
+            <div class="row m-0 my-1 bg-dark p-3 rounded text-white">
+                <div class="col border-end">@item.start.ToString("dd-MM-yyyy")</div>
+                <div class="col border-end">@item.validity.ToString("dd-MM-yyyy")</div>
+                <div class="col border-end">@item.weight kg</div>
+
+                <div class="col text-danger">Expired</div>
+
+            </div>
+        }
+    }
+
+
+
+
+</div>
+
