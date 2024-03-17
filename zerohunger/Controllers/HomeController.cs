@@ -120,12 +120,12 @@ namespace zerohunger.Controllers
                 }
                 db.users.Add(userl);
                 db.SaveChanges();
-
-
-
                 return RedirectToAction("Index");
             }
-            model.msg = "Invalid request. Please fill the form correctly!";
+            var errorMessages = ModelState.Values.SelectMany(v => v.Errors)
+                                             .Select(e => e.ErrorMessage)
+                                             .ToList();
+            model.msg = errorMessages[0];
             return View(model);
         }
 
@@ -157,7 +157,7 @@ namespace zerohunger.Controllers
             };
         }
 
-        //write a function that will convert request status to expired if the validity date is less than the current date
+        
         public static void checkValidity()
         {
             ZeroHungerEntities db = new ZeroHungerEntities();
