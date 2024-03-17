@@ -17,7 +17,14 @@ namespace zerohunger.Controllers
         public ActionResult Index()
         {
             checkValidity();
-            return View();
+            //get all requests and sum the total weight
+            var requests = db.requests.Where(u => u.status == "claimed").ToList();
+            var totalWeight = 0.0;
+            foreach (var request in requests)
+            {
+                totalWeight += request.weight;
+            }
+            return View(totalWeight);
         }
 
         public ActionResult About()
