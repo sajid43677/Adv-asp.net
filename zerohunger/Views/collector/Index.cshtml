@@ -1,7 +1,51 @@
-﻿
+﻿@model IEnumerable<zerohunger.EF.request>
 @{
     ViewBag.Title = "Index";
 }
 
 <h2>Wellcome Collector</h2>
+<h1>Pickup Requests</h1>
+<div class="row m-0 my-1 bg-dark p-3 rounded text-white">
+    <div class="col-2 border-end">Restaurant Name</div>
+    <div class="col-2 border-end">Restaurant Location</div>
+    <div class="col-2 border-end">Weight</div>
+    <div class="col-2 text-warning">Validity</div>
+    <div class="col-4 text-md-center">Action</div>
+
+</div>
+@foreach (var item in Model)
+{
+
+    <div class="row m-0 my-1 border border-primary p-3 rounded ">
+        <div class="col-2 border-end">
+            @item.restrurant.name
+        </div>
+        <div class="col-2 border-end">
+            @item.restrurant.location
+        </div>
+        <div class="col-2 border-end">
+            @item.weight kg
+        </div>
+        <div class="col-2 border-end">
+            @item.validity.ToString("dd-MM-yyyy")
+        </div>
+        <div class="col-4 d-flex justify-content-center">
+            @if (item.status.Equals("Assigned"))
+            {<form action="" method="post" class="row">
+                    <input type="hidden" name="requestId" value="@item.id" />
+                    <div class="col-auto">
+                        <button type="submit" class="btn btn-success">Claim</button>
+                    </div>
+                </form>
+
+
+            }
+            else
+            {
+                <div class="text-md-center text-success">@item.status</div>
+            }
+        </div>
+    </div>
+
+}
 
