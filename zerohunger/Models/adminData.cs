@@ -10,7 +10,7 @@ namespace zerohunger.Models
     public class adminData
     {
       
-        public List<request> requests { get; set; }
+        public List<requestDTO> requests { get; set; }
         public List<collectorDTO> collectors { get; set; }
 
     }

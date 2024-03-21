@@ -1,7 +1,20 @@
-﻿@model IEnumerable<zerohunger.EF.request>
+﻿@model IEnumerable<zerohunger.DTOs.requestDTO>
+@{ 
+    var total = 0.0;
+    foreach (var item in Model)
+    {
+        if (item.status == "claimed") {
+            total += item.weight;
+        }
 
-<h2>Wellcome restaurant</h2>
-<div>
+    }
+}
+
+<div class="d-flex justify-content-between">
+    <h2>Wellcome restaurant</h2>
+    <div class="total-donated bg-success text-dark px-3 py-2 rounded">
+        <h2>@total KGs Donated </h2>
+    </div>
     <a href="../restaurant/create" class="btn btn-outline-info">Create pickup request</a>
 </div>
 <div><h3>Your requests:</h3></div>
@@ -62,6 +75,10 @@
             </div>
         }
     }
+    <br />
+    <div>
+        <a href="../restaurant/delete" class="btn btn-danger">Clear Expired request</a>
+    </div>
 
 
 

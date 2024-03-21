@@ -12,6 +12,7 @@ namespace zerohunger.Models
 {
     public class signup
     {
+        [CustomNameValidation]
         public string Name { get; set; }
         [Required]
         [EmailAddress]
@@ -45,6 +46,30 @@ namespace zerohunger.Models
             if (isEmailExists)
             {
                 return new ValidationResult("Email already exists.");
+            }
+            return ValidationResult.Success;
+        }
+    }
+
+    public class CustomNameValidationAttribute : ValidationAttribute
+    {
+        protected override ValidationResult IsValid(object value, ValidationContext validationContext)
+        {
+            var db = new ZeroHungerEntities();
+
+            string name = value as string;
+
+            if (string.IsNullOrEmpty(name))
+            {
+                return ValidationResult.Success;
+            }
+
+            bool isNameExists = db.collectors.Any(u => u.name == name);
+            bool isNameExists2 = db.restrurants.Any(u => u.name == name);
+
+            if (isNameExists || isNameExists2)
+            {
+                return new ValidationResult("Name already exists.");
             }
             return ValidationResult.Success;
         }

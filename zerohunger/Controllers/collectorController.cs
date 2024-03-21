@@ -5,6 +5,7 @@ using System.Runtime.CompilerServices;
 using System.Web;
 using System.Web.Mvc;
 using zerohunger.Auth;
+using zerohunger.DTOs;
 using zerohunger.EF;
 
 namespace zerohunger.Controllers
@@ -36,14 +37,40 @@ namespace zerohunger.Controllers
             return View(data);
         }
 
-        public static List<request> fetch(int id)
+        public static List<requestDTO> fetch(int id)
         {
             ZeroHungerEntities db = new ZeroHungerEntities();
             
             var data = (from r in db.requests
                         where r.collector.id == id
                         select r).ToList();
-            return data;
+            var data1 = new List<requestDTO>();
+            foreach (var request in data)
+            {
+                data1.Add(new requestDTO
+                {
+                    id = request.id,
+                    weight = request.weight,
+                    validity = request.validity,
+                    start = request.start,
+                    status = request.status,
+                    rid = request.rid,
+                    cid = request.cid,
+                    collector = request.collector == null ? null : new collectorDTO
+                    {
+                        id = request.collector.id,
+                        name = request.collector.name,
+                        current_assigned = request.collector.current_assigned
+                    },
+                    restrurant = request.restrurant == null ? null : new restrurantDTO
+                    {
+                        id = request.restrurant.id,
+                        name = request.restrurant.name,
+                        location = request.restrurant.location
+                    }
+                });   
+            }
+            return data1;
         }
 
         

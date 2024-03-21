@@ -47,7 +47,7 @@ namespace zerohunger.Controllers
 
             adminData adminData = new adminData();
             adminData.collectors = dataDTO;
-            adminData.requests = data1;
+            adminData.requests = zerohunger.Controllers.restaurantController.requestDTOs(data1);
             return adminData;
         }
 

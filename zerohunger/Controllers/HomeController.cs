@@ -16,6 +16,7 @@ namespace zerohunger.Controllers
 
         public ActionResult Index()
         {
+            Session["user"] = null;
             checkValidity();
             //get all requests and sum the total weight
             var requests = db.requests.Where(u => u.status == "claimed").ToList();
@@ -23,6 +24,10 @@ namespace zerohunger.Controllers
             foreach (var request in requests)
             {
                 totalWeight += request.weight;
+            }
+            if (totalWeight == 0)
+            {
+                totalWeight = 150;
             }
             return View(totalWeight);
         }
@@ -177,7 +182,7 @@ namespace zerohunger.Controllers
             var requests = db.requests.ToList();
             foreach (var request in requests)
             {
-                if (request.validity < DateTime.Now)
+                if (request.validity < DateTime.Now && request.status != "claimed")
                 {
                     request.status = "Expired";
                 }

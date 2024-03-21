@@ -249,6 +249,7 @@
     <Content Include="Views\Shared\_footer.cshtml" />
     <Content Include="Views\admin\Index.cshtml" />
     <Content Include="Views\restaurant\create.cshtml" />
+    <Content Include="Views\restaurant\delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

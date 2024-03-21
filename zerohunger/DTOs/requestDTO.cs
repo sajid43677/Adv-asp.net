@@ -14,5 +14,7 @@ namespace zerohunger.DTOs
         public string status { get; set; }
         public int rid { get; set; }
         public int cid { get; set; }
+        public collectorDTO collector { get; set; }
+        public restrurantDTO restrurant { get; set; }
     }
 }
